@@ -1,0 +1,54 @@
+
+{% extends 'base.html ' %}
+
+{% block header %}
+    <h2>{% block title %} Publicaciones {% endblock %}</h2>
+    {% if g.user %}
+        <a href="{{ url_for('blog.create') }}">Nueva Publicacion</a>
+    {% endif %}
+
+
+{% endblock %}
+
+{% block content %}
+
+{% for post in posts %}
+    <article> 
+        <header>
+            <div>
+                <h1>{{ post.title }}</h1>
+                <div class="about"> 
+                    Publicado por {{ get_user(post.author).username }}
+                    el {{ post.created.strftime('%Y-%m-%d') }}
+                </div>
+            </div>
+            <div>
+                {% if g.user.id == post.author %}
+                <a href="{{ url_for('blog.update', id = post.id) }}">Editar</a>
+                <a href="{{ url_for('blog.delete', id = post.id) }}">Eliminar</a>
+                
+                {% endif %}
+            </div>
+        </header>
+        <!-- <div>
+            <p>{{ post.body }}</p>
+            <div>
+                <img src="{{post.im}}" alt="imagen1">
+            </div>
+        </div> -->
+    </article>
+{% endfor %}
+
+{% endblock %}
+
+
+<!-- vamos a iterar una plantilla para cada articulo, entonces cada uno de esas block
+vamos a colocar como si fuera un aarticulo y en cada articulo vamos a recuperar... 
+dentro del for vamos a crear una plantilla,en este caso ponemos la etiqueta article,
+y luego esto tambien va a tener la parte de emcabezado, y la parte de contenido,
+en la carte del encabezado voy a colocar headers, (contiene el titulo del articulo o del blog),
+debajo del header, voy a tener un div para mi articulo y adentro un parrafo(p), dentro 
+del parrafo voy a tener todo el articulo q seria el cuerpo,  -->
+
+ <!-- en el segundo if, va lo que el usuario puede editar o eliminar, o sea solamente el usuario correspodiente
+al post puede eliminar o editar sus post, otros no. -->

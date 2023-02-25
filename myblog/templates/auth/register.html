@@ -1,0 +1,22 @@
+
+{% extends 'base.html ' %}
+
+{% block header %}
+
+    <h2>{% block title %}Registrar usuario{% endblock %}</h2>
+
+{% endblock %}
+
+{% block content %}
+<form method="post">
+    <label for="username">Nombre de Usuario</label>
+    <input type="text" name = 'username' id = 'username' required>
+    <label for="password">Contrasena</label>
+    <input type="password" name = 'password' id = 'password' required>
+    <input type="submit", value="Registrar">
+</form>
+{% endblock %}
+
+<!-- en la parte de (form method='post') si nosostros ponemos el metodo GET lo que va hacer
+     es mostrar en la URL los datos ingresados porejm: (usuario y contrasena). En cambio
+    con el metodo 'post' eso no va a pasar -->

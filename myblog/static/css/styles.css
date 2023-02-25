@@ -1,0 +1,156 @@
+
+/* MENU DE NAVEGACION */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    background: #B79891;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #94716B, #B79891);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #94716B, #B79891); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.header{
+    background-color: palevioletred;
+
+}
+
+.nav{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 10px 0;
+}
+
+.nav a{
+    text-decoration:underline;
+    color:aliceblue;
+}
+
+.nav nav{
+    display: flex;
+    align-items: center;
+}
+
+.nav nav a{
+    margin: 0 10px;
+}
+
+.nav nav span{
+    margin: 0 10px 0 0;
+    color: darkred;
+    text-transform:capitalize;
+    font-weight: 800;
+}
+
+/* CONTENT */
+
+.content{
+    max-width: 85%; /*que ocupe el 85% de navegador*/
+    margin: 10px auto; /* 10px de arriba hacia abajo, y alos costados automatico para q se centre*/
+    
+}
+
+.content header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 10px solid #ccc;
+    padding: 10px 0;
+}
+
+/* MENSAJE DE FLASH */
+
+.flash{
+    background-color: red; /* color de fondo*/
+    color:black; /* color de las letras */
+    padding: 10px; /* tamano del fondo de arriba hacia abajo*/
+    display:flex;
+    align-items:center;
+    justify-content:right;
+    max-width: 20%;
+}
+
+/* INDEX - PUBLICACIONES */
+
+article{
+    padding: 10px 0; /* 10 px arriba y abajo, y 0 hacia los costados */
+    
+}
+
+article header{
+    margin: 10px 0;
+    display: flex;
+    align-self: center;
+    justify-content: space-between;
+}
+
+/* AGRANDAR el NOMBRE DEL ARTICULO */
+
+article header h1{
+    font-size: 36px;
+}
+
+/* vamos a la parte de about la cual el mensaje que se mostraba ( publicado por tal persona..)*/
+
+article header .about{
+    font-style: italic; /* le voy a cambiar el estilo*/
+    color: purple;
+    font-size: 18px; /* le bajamos el tamos q sea de 18pxeles*/
+}
+
+/* FORMULARIOS */
+
+form{
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+}
+/* darle estilo por ejemplo al label al input y al textArea */
+
+form label, input, textarea{
+    font-weight: 600; /*un poco negrita*/
+    margin: 5px 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    padding: 10px;
+}
+
+/* DARLE ESTILO AL BOTON PARA Q NO ESTE A LO LARGO DE TODA LA PAGINA */
+/*entre corchetes vamos a indicarle que tipo de input es */
+
+form input[type = 'submit']{
+    align-self: start ; /* tipo star para q este en el inicio*/
+    min-width: 200px;/*el tamno minimo que puede tener es 200pixeles*/
+}
+
+/* LOGIN */
+
+.login{
+    max-width: 30%; /*para q ocupe solo el 30% de la pantalla*/
+    margin: 0 auto; /* 0 de arriba y abajo y auto para q se centre*/
+}
+
+/* voy a poner login y aqui voy acceder al input, aqui voy a poder acceder a input desde login ya no desde el formulario*/
+
+.login input[type = 'submit']{
+    margin: 10px 0;
+    min-width: 100% ;
+    background-color: deeppink;
+    border: none;
+    border-radius: 5px;
+    color: maroon;
+}
+
+.login input[type = 'submit']:hover{
+    background-color: aqua;
+    cursor: pointer;
+}
+
